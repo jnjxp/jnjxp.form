@@ -47,7 +47,7 @@ class FieldCollection implements IteratorAggregate
     /**
      * Factory
      *
-     * @var Factory
+     * @var FieldFactory
      *
      * @access protected
      */
