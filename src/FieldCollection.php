@@ -21,6 +21,7 @@ namespace Jnjxp\Form;
 
 use ArrayIterator;
 use IteratorAggregate;
+use JsonSerializable;
 
 /**
  * FieldCollection
@@ -33,7 +34,7 @@ use IteratorAggregate;
  *
  * @see IteratorAggregate
  */
-class FieldCollection implements IteratorAggregate
+class FieldCollection implements IteratorAggregate, JsonSerializable
 {
     /**
      * Fields
@@ -196,5 +197,17 @@ class FieldCollection implements IteratorAggregate
             }
         }
         return $this;
+    }
+
+    /**
+     * JsonSerialize
+     *
+     * @return array
+     *
+     * @access public
+     */
+    public function jsonSerialize()
+    {
+        return $this->fields;
     }
 }

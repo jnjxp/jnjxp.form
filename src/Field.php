@@ -19,6 +19,8 @@
 
 namespace Jnjxp\Form;
 
+use JsonSerializable;
+
 /**
  * Field
  *
@@ -30,7 +32,7 @@ namespace Jnjxp\Form;
  *
  * @SuppressWarnings(PHPMD.ShortVariable)
  */
-class Field
+class Field implements JsonSerializable
 {
     protected $name;
 
@@ -188,6 +190,39 @@ class Field
             return $this->$method();
         }
         return $this->$name;
+    }
+
+    /**
+     * JsonSerialize
+     *
+     * @return mixed
+     *
+     * @access public
+     */
+    public function jsonSerialize()
+    {
+        return $this->getArrayCopy();
+    }
+
+    /**
+     * GetArrayCopy
+     *
+     * @return mixed
+     *
+     * @access public
+     */
+    public function getArrayCopy()
+    {
+        return [
+            'name'    => $this->name,
+            'id'      => $this->id,
+            'label'   => $this->label,
+            'errors'  => $this->errors,
+            'type'    => $this->type,
+            'value'   => $this->value,
+            'attribs' => $this->attribs,
+            'options' => $this->options,
+        ];
     }
 
 }
