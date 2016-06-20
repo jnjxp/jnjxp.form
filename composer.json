@@ -1,0 +1,27 @@
+{
+    "name": "jnjxp/form",
+    "description": "Describe collections of HTML form inputs",
+    "homepage":"https://github.com/jnjxp/jnjxp.form",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "jake johns",
+            "email": "jake@jakejohns.net"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Jnjxp\\Form\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Jnjxp\\Form\\":"tests/"
+        }
+    },
+    "suggest": {
+        "aura/html": "For rendering output",
+        "aura/filter": "For form validation"
+    }
+}
