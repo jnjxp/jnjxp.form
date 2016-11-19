@@ -46,17 +46,17 @@ foreach ($form as $field) {
 
     echo $helper->tag('div', ['class' => $group]);
 
-    if ($input->label) {
+    if ($field->label) {
         echo PHP_EOL;
-        echo $helper->label($input->label, $label);
+        echo $helper->label($field->label, $label);
     }
 
     echo PHP_EOL;
-    echo $helper->input($input->spec);
+    echo $helper->input($field->spec);
 
-    if ($input->errors) {
+    if ($field->errors) {
         $errors = $helper->ul(['class' => 'errors']);
-        $errors->items($input->errors);
+        $errors->items($field->errors);
         echo PHP_EOL;
         echo $errors;
         echo PHP_EOL;
