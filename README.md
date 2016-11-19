@@ -18,7 +18,8 @@ $form = (new Jnjxp\Form\FieldFactory)->newFieldCollection();
 $form->add('username')
     ->type('text')
     ->label('Username')
-    ->attribs(['required' => true]);
+    ->attribs(['required' => true])
+    ->help('Enter username or email address');
 
 $form->add('password')
     ->type('password')
@@ -53,6 +54,13 @@ foreach ($form as $field) {
 
     echo PHP_EOL;
     echo $helper->input($field->spec);
+
+    if ($field->help) {
+        echo PHP_EOL;
+        echo $helper->tag('p', ['class' => 'help-block']);
+        echo $field->help;
+        echo $helper->tag('/p');
+    }
 
     if ($field->errors) {
         $errors = $helper->ul(['class' => 'errors']);

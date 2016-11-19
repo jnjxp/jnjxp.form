@@ -50,6 +50,8 @@ class Field implements JsonSerializable
 
     protected $options = [];
 
+    protected $help;
+
     /**
      * Create a new form field
      *
@@ -153,6 +155,21 @@ class Field implements JsonSerializable
     public function options(array $options)
     {
         $this->options = $options;
+        return $this;
+    }
+
+    /**
+     * Set help text for field
+     *
+     * @param string $text help text for field
+     *
+     * @return $this
+     *
+     * @access public
+     */
+    public function help($text)
+    {
+        $this->help = $text;
         return $this;
     }
 
