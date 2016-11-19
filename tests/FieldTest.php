@@ -92,6 +92,19 @@ class FieldTest extends \PHPUnit_Framework_TestCase
         );
     }
 
+    public function testHelp()
+    {
+        $this->assertSame(
+            $this->field,
+            $this->field->help('help')
+        );
+
+        $this->assertEquals(
+            'help',
+            $this->field->help
+        );
+    }
+
     public function testGetSpec()
     {
         $this->field->label('Label')
