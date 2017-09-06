@@ -41,7 +41,7 @@ class FieldFactory
      *
      * @access public
      */
-    public function newField($name, $class = 'Jnjxp\Form\Field')
+    public function newField($name, $class = Field::class)
     {
         return new $class($name);
     }
@@ -55,7 +55,7 @@ class FieldFactory
      *
      * @access public
      */
-    public function newFieldCollection($class = 'Jnjxp\Form\FieldCollection')
+    public function newFieldCollection($class = FieldCollection::class)
     {
         return new $class($this);
     }

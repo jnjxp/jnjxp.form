@@ -102,7 +102,7 @@ class FieldCollection implements IteratorAggregate, JsonSerializable
      *
      * @access public
      */
-    public function add($name, $class = 'Jnjxp\Form\Field')
+    public function add($name, $class = Field::class)
     {
         if ($this->has($name)) {
             throw new \Exception("Field '$name' already exists");
